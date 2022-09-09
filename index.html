@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatib<device-width>, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="container">
-    <p class="items">score: 1</p>
-    <p class="items">what is <span>2</span> multipy by <span>3</span> ?</p>
-    <input id="textbox"  type="number" placeholder="Enter your answer" class="items"/>
-    <input id="submit" type="submit" value="submit" class="items"/>
-   </div>
+   <form class="container">
+
+    <p class="items">score: <span id="score">0</span></p>
+    <p class="items">what is <span id="num1"></span> multipy by <span id="num2"></span> ?</p>
+    <input id="textbox"  type="number" placeholder="Enter your answer" class="items">
+    <input id="submit" type="submit"  value="submit" class="items">
+   </form>
+   <script src="script.js"></script>
 </body>
 </html>
