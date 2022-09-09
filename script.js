@@ -3,9 +3,18 @@ const score = document.getElementById('score')
 const submit1 = document.getElementById('submit')
 let number1=document.getElementById('num1')
 let number2=document.getElementById('num2')
-let x
-let s=0
+//localStorage.setItem('multiply','score')
+let multiply = {
+    score:0
+}
 
+
+
+let x
+let s = 0
+const multiplyJson = localStorage.getItem("multiply")
+multiply=JSON.parse(multiplyJson)
+score.textContent= multiply.score
 n1 = Math.floor(Math.random() * 11);
 number1.textContent=n1
 
@@ -19,12 +28,15 @@ txt.addEventListener('change',(e)=>{
 })
 submit1.addEventListener('click',(e)=>{
     if(x==n1*n2){
-        s+=1
+        multiply.score+=1
     }
     else{
-        s-=1
+        multiply.score-=1
     }
-    score.textContent=s
+   console.log(multiply.score)
+    
+    const multiplyJson = JSON.stringify(multiply)
+    localStorage.setItem('multiply',multiplyJson)
    
    
 })
