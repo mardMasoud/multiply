@@ -12,8 +12,22 @@ let multiply = {
 
 let x
 let s = 0
-const multiplyJson = localStorage.getItem("multiply")
-multiply=JSON.parse(multiplyJson)
+
+let multiplyJson = localStorage.getItem("multiply")
+console.log(multiplyJson)
+if(!multiplyJson){
+    multiplyJson = JSON.stringify(multiply)
+    localStorage.setItem('multiply',multiplyJson)
+
+    
+     console.log('if')    
+}
+else{
+    console.log('else')
+    multiply=JSON.parse(multiplyJson)
+  }
+
+
 score.textContent= multiply.score
 n1 = Math.floor(Math.random() * 11);
 number1.textContent=n1
